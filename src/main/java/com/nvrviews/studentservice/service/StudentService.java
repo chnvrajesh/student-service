@@ -1,5 +1,7 @@
 package com.nvrviews.studentservice.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -44,6 +46,13 @@ public class StudentService {
 		
 		return studentObj;
 		
+	}
+
+	public List<Student> getStudents() {
+		// TODO Auto-generated method stub
+		List<Student> studentObjs = studentRepository.findAll();
+		
+		return studentObjs;
 	}
 
 }

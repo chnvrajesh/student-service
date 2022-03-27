@@ -1,5 +1,7 @@
 package com.nvrviews.studentservice.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -27,6 +29,11 @@ public class StudentController implements StudentApiContract{
 	@GetMapping("/{id}")
 	public StudentVO getStudentById(@PathVariable("id") Long id) {
 		return studentService.getStudentById(id);
+	}
+	
+	@GetMapping("/")
+	public List<Student> getStudents() {
+		return studentService.getStudents();
 	}
 
 }
